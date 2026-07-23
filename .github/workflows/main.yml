@@ -16,6 +16,7 @@ jobs:
        PORT: 4000
 
      steps:
+     
        #  [projetos] (aplicacoes FE/BE, apps, projetos de testes, etc)
        - name: Clone do projeto
          user: actions/checkout@v6
