@@ -15,23 +15,21 @@ jobs:
        API_BASE_URL: 'http://localhost:3000'
        PORT: 4000
 
-     Steps:
-      #  [projetos] (aplicacoes FE/BE, apps, projetos de testes, etc)
-      - name: Clone do projeto
-        user: actions/checkout@v6
+     steps:
+       #  [projetos] (aplicacoes FE/BE, apps, projetos de testes, etc)
+       - name: Clone do projeto
+         user: actions/checkout@v6
       
-      #  [dependencias do projeto] (node/npm, java/maven, python/pip)
-      - name: Instalando deps do projeto
+       #  [dependencias do projeto] (node/npm, java/maven, python/pip)
+       - name: Instalando deps do projeto
         run: npm install
       
-      - name: Iniciando servidor Mock
-        run: npm run mock-server &
+       - name: Iniciando servidor Mock
+         run: npm run mock-server &
         
-      - name: Iniciando servidor da aplicação
-        run: npm run server
+       - name: Iniciando servidor da aplicação
+         run: npm run server
 
-      #  [acoes para verificar regras/políticas] (cobertura de código, formatacao, testes ui/e2e/unit/etc.)
-      - name: Executando sos testes e2e do projeto
-        run: npx cypress run
-
-
+       #  [acoes para verificar regras/políticas] (cobertura de código, formatacao, testes ui/e2e/unit/etc.)
+       - name: Executando sos testes e2e do projeto
+         run: npx cypress run
